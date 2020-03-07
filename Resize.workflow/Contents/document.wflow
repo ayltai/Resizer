@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>492</string>
+	<key>AMApplicationVersion</key>
+	<string>2.10</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionNameComment</key>
+				<string></string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run	set currentApplication to path to frontmost application as text		set choice to (choose from list {"4:3 - 640x480", "4:3 - 720x540", "4:3 - 800x600", "4:3 - 900x675", "4:3 - 960x720", "4:3 - 1024x768", "4:3 - 1080x810", "4:3 - 1152x864", "4:3 - 1200x900", "4:3 - 1280x960", "3:2 - 750x500", "3:2 - 810x540", "3:2 - 900x600", "3:2 - 960x640", "3:2 - 1080x720", "3:2 - 1152x768", "3:2 - 1200x800", "3:2 - 1296x864", "3:2 - 1350x900", "3:2 - 1440x960", "16:10 - 768x480", "16:10 - 800x500", "16:10 - 864x540", "16:10 - 960x600", "16:10 - 1024x640", "16:10 - 1080x675", "16:10 - 1152x720", "16:10 - 1200x750", "16:10 - 1280x800", "16:10 - 1360x850", "16:10 - 1440x900", "16:10 - 1536x960", "16:9 - 852x480", "16:9 - 960x540", "16:9 - 1024x576", "16:9 - 1152x648", "16:9 - 1200x675", "16:9 - 1280x720", "16:9 - 1360x765", "16:9 - 1440x810", "16:9 - 1536x864", "16:9 - 1600x900"} with prompt "Resize to:" without multiple selections allowed and empty selection allowed)		if choice is false then return		set tokens to split(the choice as string, " - ")	set width to item 1 of split(item 2 of tokens, "x") as integer	set height to item 2 of split(item 2 of tokens, "x") as integer		try		set bounds of front window of application currentApplication to {0, 0, width, height}	on error		tell application "System Events"			set theProcess to first process whose frontmost is true						tell theProcess				tell first window					set position to {0, 0}					set size to {width, height}				end tell			end tell		end tell	end tryend runto split(input, delimiter)	set delimiters to AppleScript's text item delimiters	set AppleScript's text item delimiters to delimiter	set tokens to every text item of input	set AppleScript's text item delimiters to delimiters		return tokensend split</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>IgnoresInput</key>
+				<true/>
+				<key>InputUUID</key>
+				<string>5FED4A6A-3D79-45D7-81D7-48D31DFB07FE</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>BE53845F-5000-4114-8083-DA413123FDA6</string>
+				<key>ShowWhenRun</key>
+				<false/>
+				<key>UUID</key>
+				<string>277EDC8A-7058-465D-971A-4AD74EB87732</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>349.000000:400.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict/>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>applicationBundleIDsByPath</key>
+		<dict/>
+		<key>applicationPaths</key>
+		<array/>
+		<key>inputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>outputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>presentationMode</key>
+		<integer>11</integer>
+		<key>processesInput</key>
+		<integer>0</integer>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceProcessesInput</key>
+		<integer>0</integer>
+		<key>systemImageName</key>
+		<string>NSActionTemplate</string>
+		<key>useAutomaticInputType</key>
+		<integer>0</integer>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>
